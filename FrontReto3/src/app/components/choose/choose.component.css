@@ -1,0 +1,33 @@
+.juegoContainer1{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+    height: 400px;
+    opacity: 0.9;
+    border-style: ridge;
+    border-width: 15px;
+    border-color: black;
+    padding: 35px;
+}
+.juegoContainer2{
+    background: rgb(108,47,47);
+background: linear-gradient(90deg, rgba(108,47,47,1) 0%, rgba(121,9,41,1) 49%, rgba(255,0,189,1) 100%);
+    height: 400px;
+    opacity: 0.9;
+    border-style: ridge;
+    border-width: 15px;
+    border-color: black;
+    padding: 35px;
+}
+.tituloUnir{
+    font-size: 45px;
+}
+.descripcion{
+    font-size: 30px;
+}
+.entrar{
+    margin-top: 25px;
+    text-align: center;
+    height: 80px;
+    border-radius: 25px;
+    box-shadow: 25px;
+}
