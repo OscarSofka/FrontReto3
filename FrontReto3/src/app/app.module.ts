@@ -16,6 +16,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MesaIdcreadaComponent } from './components/mesa-idcreada/mesa-idcreada.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -37,7 +39,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RouterModule.forRoot([]),
     AppRoutingModule,
     NgImageSliderModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatGridListModule
     
   ],
   providers: [],

@@ -1,2 +1,8 @@
 <app-navbar></app-navbar>
+<div class="card">
+    <div class="card-body" *ngIf="data | async as user">
+       {{user.displayName?user.displayName: user.email}}!! el Id de la mesa es {{Id}} recuerda darselo a tus amigos para que se unan.
+    </div>
+</div>
+<mat-grid-list cols="4" rowHeight="170px"></mat-grid-list>
 <button (click)="showUser()"></button>

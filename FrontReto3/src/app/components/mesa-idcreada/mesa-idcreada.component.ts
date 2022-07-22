@@ -10,7 +10,7 @@ import { AuthFirebaseService } from 'src/app/services/auth-firebase.service';
 export class MesaIdcreadaComponent  {
 
   Id='';
-  data={};
+  data=this.authService.data();
   constructor(
     private activateReouted: ActivatedRoute,
     private authService: AuthFirebaseService
@@ -21,10 +21,13 @@ export class MesaIdcreadaComponent  {
       this.Id = params['idMesa'] ;
     });
   }
+ 
 
   showUser(){
     console.log(this.Id);
-    this.data = this.authService.data();
+    this.authService.data().subscribe(res =>{  
+      console.log(res?.displayName);
+    });
 
 
   }

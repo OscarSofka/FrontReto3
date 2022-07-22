@@ -40,8 +40,14 @@ export class AuthFirebaseService {
 
  
   async logOut(){
-    return await this.afauth.signOut();
-    console.log("desloggueado")
+    try {
+      console.log("desloggueado");
+      return await this.afauth.signOut();    
+    } catch (error) {
+      
+    }
+   
+    
   }
 
   data(){
