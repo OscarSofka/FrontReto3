@@ -18,6 +18,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 
@@ -41,7 +42,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     NgImageSliderModule,
     NgbModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    DragDropModule
     
   ],
   providers: [],

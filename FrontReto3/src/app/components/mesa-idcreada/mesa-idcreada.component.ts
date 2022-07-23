@@ -9,6 +9,34 @@ import { AuthFirebaseService } from 'src/app/services/auth-firebase.service';
 })
 export class MesaIdcreadaComponent  {
 
+  cards = [
+    {
+      name:'a',
+      exp: 1,
+      imgUrl:''
+    },
+    {
+      name:'b',
+      exp: 2,
+      imgUrl:''
+    },
+    {
+      name:'c',
+      exp: 3,
+      imgUrl:''
+    },
+    {
+      name:'d',
+      exp: 4,
+      imgUrl:''
+    },
+    {
+      name:'e',
+      exp: 5,
+      imgUrl:''
+    },
+
+  ];
   Id='';
   data=this.authService.data();
   constructor(
@@ -27,6 +55,7 @@ export class MesaIdcreadaComponent  {
     console.log(this.Id);
     this.authService.data().subscribe(res =>{  
       console.log(res?.displayName);
+      console.log(res?.uid);
     });
 
 
