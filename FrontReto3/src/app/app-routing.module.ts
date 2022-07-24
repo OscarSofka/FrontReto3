@@ -5,13 +5,15 @@ import { ChooseComponent } from "./components/choose/choose.component";
 import { PartidaCreadaComponent } from "./components/partida-creada/partida-creada.component";
 import { LoginPageComponent } from "./components/login-page/login-page.component";
 import { MesaIdcreadaComponent } from "./components/mesa-idcreada/mesa-idcreada.component";
+import { CrearPartidaComponent } from "./components/crear-partida/crear-partida.component";
 
 const routes: Routes=[
     {path:'', pathMatch:'full', redirectTo: '/login'},
     {path:'login', component:LoginPageComponent},
     {path:'select',component: ChooseComponent},
     {path:'partidaCreada', component:PartidaCreadaComponent},
-    {path:'mesa/:idMesa',component: MesaIdcreadaComponent}
+    {path:'mesa/:idMesa',component: MesaIdcreadaComponent},
+    {path:'crearPartida/:idMesa', component: CrearPartidaComponent}
     
 ];
 @NgModule({

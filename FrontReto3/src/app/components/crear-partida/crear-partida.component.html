@@ -1,1 +1,12 @@
-<p>crear-partida works!</p>
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="containerJugadores" *ngFor="let jug of jugadores">
+        <label> ingrese email o usuario: </label>
+        <input type="text" class="inputJugador">    
+    </div>
+    <div class="buttonsContainer">
+        <input type="button" class="buttons" value="añadir jugador:  " (click)="addJugador()">
+        <input type="button" class="buttons" value="quitar jugador:  "  (click)="minusJugador()" *ngIf="cantidad>=1">
+        <input type="button" class="buttons" value="iniciar partida" (click)="iniciarPartida()" *ngIf="cantidad>=2">    
+    </div>
+</div>

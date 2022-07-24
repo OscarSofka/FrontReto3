@@ -6,30 +6,20 @@
 </div>
 <div class="gameBoard">
     <mat-grid-list cols="7" rowHeight="90px">
-        <mat-grid-tile [colspan]="1" [rowspan]="7" class="containerJ">
+        <mat-grid-tile [colspan]="7" [rowspan]="7" class="containerJ">
             <div class="board">
-                
+                <input type="button" value=">" (click)="siguiente()">   
+                <div class="handBoard" >
+
+                </div>
             </div>
-        </mat-grid-tile>
-
-        <mat-grid-tile [colspan]="4" [rowspan]="7" class="containerJ">
-            <div class="board">
-                
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="2" [rowspan]="2" class="containerJ">
-            
-        </mat-grid-tile>
-        <div class="example-box"  *ngFor="let card of cards" cdkDrag>
-            nombre: {{card.name}}
-            poder: {{card.exp}}
-        </div>
-
-        
-    
-          
-      
-    </mat-grid-list>
-
-   
+                        
+        </mat-grid-tile>     
+            <div class="example-box" 
+                 *ngFor="let card of cards.slice(inicio,final); index as i" 
+                 (cdkDragEnded)="onDragEnded($event,i)"
+                 cdkDrag>
+                 <img src={{card.imgUrl}} class="imagenCard">
+            </div>           
+    </mat-grid-list>   
 </div>

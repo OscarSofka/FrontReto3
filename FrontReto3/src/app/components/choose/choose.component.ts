@@ -22,7 +22,7 @@ export class ChooseComponent {
   }
   crearPartida(){
     console.log(this.idGenerado);
-    this.router.navigate(['/mesa',this.idGenerado]);
+    this.router.navigate(['/crearPartida',this.idGenerado]);
   }
 
   idGenerator(){

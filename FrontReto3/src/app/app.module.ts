@@ -19,6 +19,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -43,7 +44,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     NgbModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    DragDropModule
+    DragDropModule,
+    MatPaginatorModule
+    
     
   ],
   providers: [],
