@@ -20,4 +20,15 @@ export class NavbarComponent implements OnInit {
     this.authService.logOut()
     .then(()=>this.router.navigate(['/login']))
   }
+  allCards(){
+    this.router.navigate(['/allCards']);
+  }
+  home(){
+    this.router.navigate(['/select']);
+  }
+  reglas(){
+    this.router.navigate(['/reglas']);
+  }
+
 }
+

@@ -22,11 +22,18 @@ export class LoginPageComponent {
 
   }
   ingresar(){
-    const{email,password}=this.usuario;
-    this.authService.login(email,password).then (res =>{
+  
+    if(this.usuario.email == '' || this.usuario.password == ''){
+      alert("ingrese el email");
+      alert("ingrese la pasword");
+    }else{
+      const{email,password}=this.usuario;
+      this.authService.login(email,password).then (res =>{
       console.log(res);
       this.router.navigate(['/select']);
     })
+    }
+    
   }
   ingresarGoogle(){
     const{email,password}=this.usuario;
@@ -40,6 +47,9 @@ export class LoginPageComponent {
       .then(()=>{
       this.router.navigate(['/login'])
     })
+  }
+  registro(){
+    this.router.navigate(['/registro'])
   }
 
 

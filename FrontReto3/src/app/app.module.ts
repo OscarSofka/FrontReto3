@@ -20,6 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { AllCardsComponent } from './components/all-cards/all-cards.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReglasComponent } from './components/reglas/reglas.component';
 
 
 
@@ -32,7 +35,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CrearPartidaComponent,
     MesaIdcreadaComponent,
     RegistroComponent,
-    NavbarComponent
+    NavbarComponent,
+    AllCardsComponent,
+    ReglasComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     BrowserAnimationsModule,
     MatGridListModule,
     DragDropModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    HttpClientModule
     
     
   ],

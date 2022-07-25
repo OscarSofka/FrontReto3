@@ -52,4 +52,11 @@ export class WebsocketService {
     };
     return new AnonymousSubject<MessageEvent>(observer, observable);
   }
+
+  public post(url:string,body:string){
+    return this.http.post(url,body);
+  }
+  public getAllCards(url:string){
+    return this.http.get(url);
+  }
 }

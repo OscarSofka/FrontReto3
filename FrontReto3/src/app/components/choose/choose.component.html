@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <ngb-carousel *ngIf="images">
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
@@ -20,7 +21,7 @@
             <h3 class="tituloUnir">Unirse a Partida</h3>
             <p class="descripcion">Unete con tus amigos y juega </p>
             <input type="entrar" class="entrar" value="Unirse" (click)="partidaCreada()" >
-            <input type="text"  class="fadeIn second" name="login" placeholder="Ingrese el numero de mesa" [(ngModel)]="idMesa">
+            <input type="text"  class="idMesa" name="login" placeholder="Ingrese el id de mesa" [(ngModel)]="idMesa">
         </div>  
       </div>
     </ng-template>   

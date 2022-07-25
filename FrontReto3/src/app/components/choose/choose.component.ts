@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class ChooseComponent {
   constructor(private router: Router){}
 
-  images = [944, 121].map((n) => `https://picsum.photos/id/${n}/1900/620/?grayscale`);
+  images = [944, 121].map((n) => `https://picsum.photos/id/${n}/2900/715/?grayscale`);
 
   
   idMesa = '';

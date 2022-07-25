@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <input type="button" value="next" (click)="siguiente()">
+    <div class="row">
+        <div class="column">
+            <div *ngFor="let card of result.slice(inicio,final)" class="cards">
+                <img src={{card.url}} class="imagenCard">             
+            </div>  
+        </div>
+        <div class="column">
+            <div *ngFor="let card of result.slice(inicio+4,final+4)" class="cards">
+                <img src={{card.url}} class="imagenCard">             
+            </div>  
+        </div>
+        <div class="column">
+            <div *ngFor="let card of result.slice(inicio+8,final+8)" class="cards">
+                <img src={{card.url}} class="imagenCard">             
+            </div>  
+        </div>
+        <div class="column">
+            <div *ngFor="let card of result.slice(inicio+12,final+12)" class="cards">
+                <img src={{card.url}} class="imagenCard">             
+            </div>  
+        </div>
+        <div class="column">
+            <div *ngFor="let card of result.slice(inicio+16,final+16)" class="cards">
+                <img src={{card.url}} class="imagenCard">             
+            </div>  
+        </div> 
+        <div class="column">
+            <div *ngFor="let card of result.slice(inicio+20,final+20)" class="cards">
+                <img src={{card.url}} class="imagenCard">             
+            </div>  
+        </div> 
+    </div>
+</div>
