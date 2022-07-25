@@ -1,12 +1,13 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <div class="containerJugadores" *ngFor="let jug of jugadores">
+    <div class="containerJugadores" *ngFor="let jug of jugadores; index as i">
         <label> ingrese email o usuario: </label>
-        <input type="text" class="inputJugador">    
+        <input #identificador type="text" class="inputJugador"  class="emailAdd">
+        <input type="button" value="Add" (click)="correos(identificador.value)" class="buttonAdd" [disabled]="state">    
     </div>
     <div class="buttonsContainer">
-        <input type="button" class="buttons" value="añadir jugador:  " (click)="addJugador()">
-        <input type="button" class="buttons" value="quitar jugador:  "  (click)="minusJugador()" *ngIf="cantidad>=1">
+        <input type="button" class="buttons" value="añadir jugador:" (click)="addJugador()">
+        <input type="button" class="buttons" value="quitar jugador:"  (click)="minusJugador()" *ngIf="cantidad>=1">
         <input type="button" class="buttons" value="iniciar partida" (click)="iniciarPartida()" *ngIf="cantidad>=2">    
     </div>
 </div>

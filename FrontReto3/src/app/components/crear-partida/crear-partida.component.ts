@@ -9,7 +9,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CrearPartidaComponent implements OnInit {
   cantidad = 0;
   jugadores=[];
+  email =! String;
+  jugadoresSet = new Set();
   id='';
+  state !:boolean;
   
   
   constructor( 
@@ -40,6 +43,17 @@ export class CrearPartidaComponent implements OnInit {
   }
 
   iniciarPartida(){
-    this.router.navigate(['/mesa', this.id])
+    this.router.navigate(['/mesa', this.id])   
+  }
+  correos(mail : String){
+   
+    if(mail == ''){
+      alert("ingresa el correo completo")
+    }else{
+      this.state = !this.state;
+      this.jugadoresSet.add(mail);
+      console.log(mail);
+    }
+    
   }
 }
