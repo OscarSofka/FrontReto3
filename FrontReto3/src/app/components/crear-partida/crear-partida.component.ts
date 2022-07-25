@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './crear-partida.component.html',
   styleUrls: ['./crear-partida.component.css']
 })
-export class CrearPartidaComponent implements OnInit {
+export class CrearPartidaComponent {
   cantidad = 0;
   jugadores=[];
   email =! String;
@@ -24,9 +24,6 @@ export class CrearPartidaComponent implements OnInit {
         this.id = params['idMesa'] ;
       });
   }
-
-  ngOnInit(): void {
-  }
   addJugador(){
     if(this.cantidad>=6){
       alert("no se pueden mas de 6 jugadores")
@@ -35,25 +32,25 @@ export class CrearPartidaComponent implements OnInit {
       this.cantidad+=1
     }
     this.jugadores.length=this.cantidad;
-  
   }
   minusJugador(){
     this.cantidad-=1
     this.jugadores.length = this.cantidad;
   }
-
   iniciarPartida(){
-    this.router.navigate(['/mesa', this.id])   
+    if (this.jugadoresSet===null) {
+      alert("añade a los jugadores");
+    }else{
+      this.router.navigate(['/mesa', this.id])   
+      console.log(this.jugadoresSet);
+    }
   }
   correos(mail : String){
-   
     if(mail == ''){
       alert("ingresa el correo completo")
     }else{
-      this.state = !this.state;
       this.jugadoresSet.add(mail);
       console.log(mail);
     }
-    
   }
 }

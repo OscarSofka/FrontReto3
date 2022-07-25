@@ -1,12 +1,9 @@
 <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-  
+    <div id="formContent">  
       <!-- Icon -->
       <div class="fadeIn first">
         <img  class="loginImage" src="https://www.svgrepo.com/show/428/playing-cards.svg" id="icon" alt="User Icon" />
-      </div>
-  
+      </div>  
       <!-- Login Form -->
       <form>
         <input type="text"  class="fadeIn second" name="login" placeholder="Ingrese email" [(ngModel)]="usuario.email">
@@ -14,12 +11,9 @@
         <input type="submit" class="fadeIn fourth" value="Log In" (click)="ingresar()">
         <input type="submit" class="fadeIn fifth" value="Ingresar con google" (click)="ingresarGoogle()">
       </form>
-  
       <!-- Remind Passowrd -->
       <div id="formFooter">
         <a class="underlineHover" href="#">Registrarse</a>
       </div>
-    
-  
     </div>
   </div>
