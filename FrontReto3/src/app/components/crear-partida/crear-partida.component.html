@@ -1,9 +1,9 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <div class="containerJugadores" *ngFor="let jug of jugadores; index as i">
+    <div class="containerJugadores" *ngFor="let jug of jugadores; index as i" >
         <label> ingrese email o usuario: </label>
         <input #identificador type="text" class="inputJugador"  class="emailAdd">
-        <input type="button" value="Add" (click)="correos(identificador.value)" class="buttonAdd" [disabled]="state">    
+        <input type="button" value="Add" (click)="correos(identificador.value, i+1)" class="buttonAdd" [disabled]="state">    
     </div>
     <div class="buttonsContainer">
         <input type="button" class="buttons" value="añadir jugador:" (click)="addJugador()">

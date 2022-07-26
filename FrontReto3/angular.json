@@ -38,13 +38,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "500Mb",
+                  "maximumError": "10Mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "2Mb",
+                  "maximumError": "4Mb"
                 }
               ],
               "fileReplacements": [
@@ -71,12 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "FrontReto3:build:production",
-              "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "FrontReto3:build:production"
             },
             "development": {
-              "browserTarget": "FrontReto3:build:development",
-              "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "FrontReto3:build:development"
             }
           },
           "defaultConfiguration": "development"

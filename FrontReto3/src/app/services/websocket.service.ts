@@ -53,7 +53,7 @@ export class WebsocketService {
     return new AnonymousSubject<MessageEvent>(observer, observable);
   }
 
-  public post(url:string,body:string){
+  public post(url:string,body:any){
     return this.http.post(url,body);
   }
   public getAllCards(url:string){
