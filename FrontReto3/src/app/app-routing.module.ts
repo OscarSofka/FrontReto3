@@ -9,21 +9,24 @@ import { CrearPartidaComponent } from "./components/crear-partida/crear-partida.
 import { AllCardsComponent } from "./components/all-cards/all-cards.component";
 import { ReglasComponent } from "./components/reglas/reglas.component";
 import { RegistroComponent } from "./components/registro/registro.component";
+import { NotfoundComponent } from "./components/notfound/notfound.component";
 
 const routes: Routes=[
     {path:'', pathMatch:'full', redirectTo: '/login'},
     {path:'login', component:LoginPageComponent},
-    {path:'select',component: ChooseComponent},
-    {path:'partidaCreada', component:PartidaCreadaComponent},
-    {path:'mesa/:idMesa',component: MesaIdcreadaComponent},
-    {path:'crearPartida/:idMesa', component: CrearPartidaComponent},
-    {path:'allCards', component: AllCardsComponent},
-    {path:'reglas', component:ReglasComponent},
-    {path:'registro', component:RegistroComponent}
-    
+    {path:'select',component: ChooseComponent, ...canActivate(()=>  redirectUnauthorizedTo(['/login']))},
+    {path:'partidaCreada', component:PartidaCreadaComponent, ...canActivate(()=>  redirectUnauthorizedTo(['/login']))},
+    {path:'mesa/:idMesa',component: MesaIdcreadaComponent, ...canActivate(()=>  redirectUnauthorizedTo(['/login']))},
+    {path:'crearPartida/:idMesa', component: CrearPartidaComponent, ...canActivate(()=>  redirectUnauthorizedTo(['/login']))},
+    {path:'allCards', component: AllCardsComponent, ...canActivate(()=>  redirectUnauthorizedTo(['/login']))},
+    {path:'reglas', component:ReglasComponent, ...canActivate(()=>  redirectUnauthorizedTo(['/login']))},
+    {path:'registro', component:RegistroComponent},
+    {path:'**', component:NotfoundComponent}
 ];
+
 @NgModule({
     imports:[RouterModule.forRoot(routes,{useHash:true})],
     exports:[RouterModule]
 })
+
 export class AppRoutingModule{}

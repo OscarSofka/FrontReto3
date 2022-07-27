@@ -17,12 +17,17 @@ import { MesaIdcreadaComponent } from './components/mesa-idcreada/mesa-idcreada.
 import { RegistroComponent } from './components/registro/registro.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatPaginatorModule}  from '@angular/material/paginator';
 import { AllCardsComponent } from './components/all-cards/all-cards.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReglasComponent } from './components/reglas/reglas.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { provideAuth } from '@angular/fire/auth';
+import { getAuth } from '@firebase/auth';
+import { provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp } from 'firebase/app';
 
 
 
@@ -37,12 +42,15 @@ import { ReglasComponent } from './components/reglas/reglas.component';
     RegistroComponent,
     NavbarComponent,
     AllCardsComponent,
-    ReglasComponent
+    ReglasComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    provideFirebaseApp(()=>initializeApp(environment.firebaseConfig)),
+    provideAuth(()=>getAuth()),
     RouterModule.forRoot([]),
     AppRoutingModule,
     NgImageSliderModule,
@@ -51,9 +59,7 @@ import { ReglasComponent } from './components/reglas/reglas.component';
     MatGridListModule,
     DragDropModule,
     MatPaginatorModule,
-    HttpClientModule
-    
-    
+    HttpClientModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
