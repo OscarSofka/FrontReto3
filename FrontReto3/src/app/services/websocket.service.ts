@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, Observer } from 'rxjs';
 import { AnonymousSubject, Subject } from 'rxjs/internal/Subject';
-import { environment } from 'src/environments/environment';
+import { environment1 } from 'src/environments/environment';
 
-const HOST_API = new URL(environment.apiUrl).host;
+const HOST_API = new URL(environment1.apiUrl).host;
 const WEBSOCKET_URL = `ws://${HOST_API}/retrieve`;
 
 @Injectable({

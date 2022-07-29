@@ -29,6 +29,9 @@ export class NavbarComponent implements OnInit {
   reglas(){
     this.router.navigate(['/reglas']);
   }
+  creditos(){
+    this.router.navigate(['/creditos'])
+  }
 
 }
 

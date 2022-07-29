@@ -1,24 +1,39 @@
 .container{
-    height: 680px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url(https://cdn.atomix.vg/wp-content/uploads/2022/07/avengers-solo-dos.jpg);
-    padding-top: 40px;
+    padding-top: 30px;
+    position: relative;
 }
 .card{
-    margin-top: 30px;
-    margin-left: 5%;
+    margin-top: 20px;
+    margin-left: 4vw;
     width: 90%;
-    opacity: 0.85;
+    opacity: 0.78;
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);
+    border-radius: 25px;
+    background-color: black;
+    border-color: silver;
+    border-style: double;
 }
 .card-header{
     padding-top: 30px;
     height: 80px;
     font-size: 45px;
+    color: silver;
 }
 .card-body{
-    font-size: 30px;
+    font-size: 25px;
+    color: silver;
 }
 .card-title{
-    font-size: 20px;
+    font-size: 25px;
+    font-weight:bold;
+    color: silver;
+}
+.btn{
+    margin-left: 15vw;
+    width: 40vw;
+}
+.img{
+    position: absolute;
+    width: 100vw;
+    height: 92vh;
 }

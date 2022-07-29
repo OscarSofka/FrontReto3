@@ -1,39 +1,57 @@
 .juegoContainer1{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
-    height: 400px;
-    opacity: 0.9;
+    height: 60vh;
+    opacity: 0.85;
     border-style: ridge;
     border-width: 15px;
-    border-color: black;
+    border-color: rgb(72, 72, 72);
+    box-shadow: 10px 10px 6px rgb(0, 0, 0);
     padding: 35px;
+    border-radius: 25px;
 }
 .juegoContainer2{
     background: rgb(108,47,47);
     background: linear-gradient(90deg, rgba(108,47,47,1) 0%, rgba(121,9,41,1) 49%, rgba(255,0,189,1) 100%);
-    height: 400px;
-    opacity: 0.9;
+    height: 60vh;
+    opacity: 0.85;
     border-style: ridge;
     border-width: 15px;
-    border-color: black;
+    border-color: rgb(72, 72, 72);
     padding: 35px;
+    box-shadow: 10px 10px 6px rgb(0, 0, 0);
+    border-radius: 25px;
 }
 .tituloUnir{
+    margin-top: 20px;
     font-size: 45px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .descripcion{
     font-size: 30px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .entrar{
-    margin-top: 5px;
+    margin-top: 50px;
     text-align: center;
     height: 80px;
     border-radius: 25px;
     box-shadow: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
 }
 .idMesa{
     margin-top: 15px;
-    font-size: 50px;
-    margin-left: 50px;
+    font-size: 25px;
+    margin-left: 1vw;
     border-radius: 15px;
+    width: 30vw;
+    text-align: center;
 }
+.image{
+    height: 92vh;
+    width: 100vw;
+}
+

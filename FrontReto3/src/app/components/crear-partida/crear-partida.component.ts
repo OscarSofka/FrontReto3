@@ -9,9 +9,8 @@ import { WebsocketService } from 'src/app/services/websocket.service';
 })
 export class CrearPartidaComponent {
   cantidad = 0;
-  jugadores=[];
+  jugadores:string[]=[];
   email =! String;
-  jugadoresSet = new Set();
   id='';
   idgenerado='';
   state !:boolean;
@@ -42,12 +41,9 @@ export class CrearPartidaComponent {
     this.cantidad-=1
     this.jugadores.length = this.cantidad;
   }
-  iniciarPartida(){
-    if (this.jugadoresSet===null) {
-      alert("añade a los jugadores");
-    }else{
+  iniciarPartida(){    
       this.router.navigate(['/mesa', this.id])   
-      console.log(this.jugadoresSet);
+      
       this.game={
         gameId:this.id,
         playersId:this.jugador
@@ -57,13 +53,11 @@ export class CrearPartidaComponent {
       this.webSocktet.post('http://localhost:8090/game/create',this.game).subscribe(res =>{
       console.log(res);
     })
-    }
   }
   correos(mail : String,i:number){
     if(mail == ''){
       alert("ingresa el correo completo")
     }else{
-      
       this.jugador[i]=mail;
       console.log(this.jugador);
     }

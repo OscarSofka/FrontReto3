@@ -10,7 +10,11 @@ import { Router } from '@angular/router';
 export class ChooseComponent {
   constructor(private router: Router){}
 
-  images = [944, 121].map((n) => `https://picsum.photos/id/${n}/2900/715/?grayscale`);
+        
+        images = [
+          "https://c4.wallpaperflare.com/wallpaper/296/400/37/movie-avengers-infinity-war-black-panther-movie-black-widow-wallpaper-preview.jpg",
+          "https://c4.wallpaperflare.com/wallpaper/566/514/449/marvel-cinematic-universe-marvel-comics-iron-man-spider-man-wallpaper-preview.jpg"
+        ];
 
   
   idMesa = '';

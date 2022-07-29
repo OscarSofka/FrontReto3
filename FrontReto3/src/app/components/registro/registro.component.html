@@ -1,6 +1,10 @@
-<app-navbar></app-navbar>
+<div class="contenedor">
+
+</div>
+  <img src="https://c4.wallpaperflare.com/wallpaper/928/177/279/artwork-marvel-comics-marvel-cinematic-universe-captain-america-civil-war-wallpaper-preview.jpg"
+ alt="" class="img" >  
 <form class="formularioRegistro">
-    <img src="../../assets/backgroud/logo.png" class="logo">
+    <img src="../../assets/backgroud/logo.png" class="logo" (click)="home()">
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" [(ngModel)]="usuario.email"  placeholder="Enter email">  

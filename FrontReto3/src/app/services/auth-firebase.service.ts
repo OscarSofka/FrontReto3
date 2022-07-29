@@ -32,8 +32,10 @@ export class AuthFirebaseService {
   async loginGoogle(email: string, password: string){
     try {
       return await this.afauth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      
+
     } catch (err) {
-      console.log("error en login conm google", err);
+      console.log("error en login con google", err);
       return null;
     }
   }

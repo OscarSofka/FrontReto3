@@ -10,6 +10,7 @@ import { AllCardsComponent } from "./components/all-cards/all-cards.component";
 import { ReglasComponent } from "./components/reglas/reglas.component";
 import { RegistroComponent } from "./components/registro/registro.component";
 import { NotfoundComponent } from "./components/notfound/notfound.component";
+import { CreditosComponent } from "./components/creditos/creditos.component";
 
 const routes: Routes=[
     {path:'', pathMatch:'full', redirectTo: '/login'},
@@ -21,6 +22,7 @@ const routes: Routes=[
     {path:'allCards', component: AllCardsComponent, ...canActivate(()=>  redirectUnauthorizedTo(['/login']))},
     {path:'reglas', component:ReglasComponent, ...canActivate(()=>  redirectUnauthorizedTo(['/login']))},
     {path:'registro', component:RegistroComponent},
+    {path:'creditos',component:CreditosComponent, ...canActivate(() => redirectUnauthorizedTo(['/login']))},
     {path:'**', component:NotfoundComponent}
 ];
 

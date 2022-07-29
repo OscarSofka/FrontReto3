@@ -1,42 +1,65 @@
 .container{
+    border-radius: 25px;
     width: 300vh;
     height: 90vh;
+    margin-top: 5px;
     background: rgb(86,255,0);
-    background: radial-gradient(circle, rgba(86,255,0,1) 0%, rgba(55,192,6,1) 0%, rgba(12,48,12,1) 100%);
+    background: radial-gradient(circle, rgba(86,255,0,1) 0%, rgba(208,208,208,1) 0%, rgba(8,8,33,1) 100%);
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);
+    position: relative;
+    opacity: 0.9;
 }
+
+.img{
+    position: absolute;
+    width: 100vw;
+    height: 92vh;
+}
+
 .imagenCard{
     background-color: black;
-    height: 100%;
-    width: 100%;
-    padding-top: 5px;
+    height: 90%;
+    width: 150%;
+    padding-top: 1px;
     border-radius: 15px;
-
+    box-shadow: 3px 3px 5px blue, 8px 8px 6px red, 12px 12px 6px green;
 }
+
 .containercards{
     border-color: black;
     border-style: double;
 }
-.cards{
-        
-        height: 150px;
-        width: 100px;
-        margin-top: 5px;
-        border-radius: 15px;
+
+.cards{    
+    height: 17vh;
+    width: 5vw;
+    margin-top: 5px;
+    border-radius: 15px;
+    
 }
-/* Create two equal columns that floats next to each other */
+
 .column {
-    left: 80px;
+    left: 3vw;
     top: 20px;
     float: left;
     width: 15%;
-    padding: 15 px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    height: 300px; 
     position: relative;
-  }
+}
   
-  /* Clear floats after the columns */
-  .row:after {
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
+.siguiente{
+    width: 50vw;
+    height: 5vh;
+    margin-top: 5px;
+    margin-left: 14vw;
+    border-color: gray;
+    border-width: 5px;
+    border-style: double;
+    border-radius: 20px;
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);   
+}

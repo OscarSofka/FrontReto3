@@ -29,5 +29,8 @@ export class RegistroComponent implements OnInit {
       this.router.navigate(['/select']);
     })
   }
+  home(){
+    this.router.navigate(['/login']);
+  }
 
 }

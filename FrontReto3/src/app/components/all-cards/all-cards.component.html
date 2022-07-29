@@ -1,6 +1,8 @@
 <app-navbar></app-navbar>
+<img src="https://c4.wallpaperflare.com/wallpaper/144/964/28/the-avengers-avengers-endgame-ant-man-avengers-endgame-wallpaper-preview.jpg" 
+alt="" class="img">
 <div class="container">
-    <input type="button" value="next" (click)="siguiente()">
+    <input class="siguiente" type="button" value="Click para ver mas cartas" (click)="siguiente()">
     <div class="row">
         <div class="column">
             <div *ngFor="let card of result.slice(inicio,final)" class="cards">

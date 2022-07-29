@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from 'src/environments/environment';
+import { environment1, environment2 } from 'src/environments/environment';
 import { ChooseComponent } from './components/choose/choose.component';
 import { PartidaCreadaComponent } from './components/partida-creada/partida-creada.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -28,6 +28,7 @@ import { provideAuth } from '@angular/fire/auth';
 import { getAuth } from '@firebase/auth';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { initializeApp } from 'firebase/app';
+import { CreditosComponent } from './components/creditos/creditos.component';
 
 
 
@@ -44,12 +45,13 @@ import { initializeApp } from 'firebase/app';
     AllCardsComponent,
     ReglasComponent,
     NotfoundComponent,
+    CreditosComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    provideFirebaseApp(()=>initializeApp(environment.firebaseConfig)),
+    AngularFireModule.initializeApp(environment1.firebaseConfig),
+    provideFirebaseApp(()=>initializeApp(environment2.firebaseConfig)),
     provideAuth(()=>getAuth()),
     RouterModule.forRoot([]),
     AppRoutingModule,

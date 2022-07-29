@@ -2,6 +2,7 @@ import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthFirebaseService } from 'src/app/services/auth-firebase.service';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: 'app-mesa-idcreada',
@@ -18,177 +19,55 @@ export class MesaIdcreadaComponent  {
   playedCard4 !: boolean;
   playedCard5 !: boolean;
 
-  cards = [
-    {
-      name:'a',
-      exp: 1,
-      imgUrl:'../../assets/cards/0E0.jpg'
-    },
-    {
-      name:'b',
-      exp: 2,
-      imgUrl:''
-    },
-    {
-      name:'c',
-      exp: 3,
-      imgUrl:''
-    },
-    {
-      name:'d',
-      exp: 4,
-      imgUrl:''
-    },
-    {
-      name:'e',
-      exp: 5,
-      imgUrl:''
-    },
-    {
-      name:'a',
-      exp: 6,
-      imgUrl:''
-    },
-    {
-      name:'b',
-      exp: 7,
-      imgUrl:''
-    },
-    {
-      name:'c',
-      exp: 8,
-      imgUrl:''
-    },
-    {
-      name:'d',
-      exp: 9,
-      imgUrl:''
-    },
-    {
-      name:'e',
-      exp: 10,
-      imgUrl:''
-    },
-    {
-      name:'a',
-      exp: 11,
-      imgUrl:''
-    },
-    {
-      name:'b',
-      exp: 12,
-      imgUrl:''
-    },
-    {
-      name:'c',
-      exp: 13,
-      imgUrl:''
-    },
-    {
-      name:'d',
-      exp: 14,
-      imgUrl:''
-    },
-    {
-      name:'e',
-      exp: 15,
-      imgUrl:''
-    },
-    {
-      name:'a',
-      exp: 16,
-      imgUrl:''
-    },
-    {
-      name:'b',
-      exp: 17,
-      imgUrl:''
-    },
-    {
-      name:'c',
-      exp: 18,
-      imgUrl:''
-    },
-    {
-      name:'d',
-      exp: 19,
-      imgUrl:''
-    },
-    {
-      name:'e',
-      exp: 20,
-      imgUrl:''
-    },
-    {
-      name:'a',
-      exp: 21,
-      imgUrl:''
-    },
-    {
-      name:'b',
-      exp: 22,
-      imgUrl:''
-    },
-    {
-      name:'c',
-      exp: 23,
-      imgUrl:''
-    },
-    {
-      name:'d',
-      exp: 24,
-      imgUrl:''
-    },
-    {
-      name:'e',
-      exp: 25,
-      imgUrl:''
-    },
-    {
-      name:'a',
-      exp: 26,
-      imgUrl:''
-    },
-    {
-      name:'b',
-      exp: 27,
-      imgUrl:''
-    },
-    {
-      name:'c',
-      exp: 28,
-      imgUrl:''
-    },
-    {
-      name:'d',
-      exp: 29,
-      imgUrl:''
-    },
-    {
-      name:'e',
-      exp: 30,
-      imgUrl:''
-    }
-    
-  ];
+ 
   inicio=0;
   final=5;
   Id='';
+  i !:number;
+
+  exp !: number
+  url !: string
+
+  cards: any=[]
+
   data=this.authService.data();
+  result: any={}
   constructor(
     private activateReouted: ActivatedRoute,
     private authService: AuthFirebaseService,
+    private webSocket: WebsocketService
     
     ) { 
     
-    this.activateReouted.params.subscribe(params =>{
-      console.log(params);
-      this.Id = params['idMesa'] ;
+      this.activateReouted.params.subscribe(params =>{
+        this.Id = params['idMesa'] ;
+      });
+      this.allCards();
+      this.handCards();
+      this.imprimir();
+    }
+  imprimir(){
+    let h = this.authService.data().subscribe(res=>{
+      console.log(res);
     });
-
+    
+    
   }
- 
+  handCards(){
+    this.i= Math.floor(Math.random() * (107 - 0) + 0);
+    return this.i;  
+  }
 
+  allCards(){
+    this.webSocket.getAllCards('http://localhost:8090/card/all').subscribe(res =>{
+    this.result = res;      
+
+    for(var e=0; e<5; e++){
+      this.cards.push(this.result[this.handCards()]);      
+    }
+    })
+  }
+  
   showUser(){
     console.log(this.Id);
     this.authService.data().subscribe(res =>{  
@@ -227,7 +106,11 @@ export class MesaIdcreadaComponent  {
       }
       if(this.playedCard1 == true){
         if(this.final == 5){
-          console.log(this.cards[0].exp);      
+          console.log(this.cards[0].exp); 
+          this.authService.data().subscribe(res=>{
+            console.log(res?.email);
+          })
+               
         }
         if(this.final == 10){
           console.log(this.cards[5].exp);
@@ -263,7 +146,8 @@ export class MesaIdcreadaComponent  {
       }
       if(this.playedCard2 == true){
         if(this.final == 5){
-          console.log(this.cards[1].exp);      
+          console.log(this.cards[1].exp);    
+            
         }
         if(this.final == 10){
           console.log(this.cards[6].exp);

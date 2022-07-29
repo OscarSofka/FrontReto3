@@ -1,24 +1,28 @@
 <app-navbar></app-navbar>
-<div class="card">
+<img src="https://c4.wallpaperflare.com/wallpaper/717/44/8/the-avengers-iron-man-hulk-hawkeye-wallpaper-preview.jpg" alt="" class="img">
+
+<div class="card text-white bg-secondary">
     <div class="card-body" *ngIf="data | async as user">
-       {{user.displayName?user.displayName: user.email}}!! el Id de la mesa es {{Id}} recuerda darselo a tus amigos para que se unan.
+      <h5 class="card-title">{{user.displayName?user.displayName: user.email}}
+        !! el Id de la mesa es {{Id}} recuerda darselo a tus amigos para que se unan.</h5>
     </div>
 </div>
 <div class="gameBoard">
-    <mat-grid-list cols="7" rowHeight="90px">
-        <mat-grid-tile [colspan]="7" [rowspan]="7" class="containerJ">
-            <div class="board">
-                <input type="button" value=">" (click)="siguiente()"> 
-                <div class="handBoard"></div>  
-            </div>
-            
-                        
-        </mat-grid-tile>     
-            <div class="example-box" 
-                 *ngFor="let card of cards.slice(inicio,final); index as i" 
-                 (cdkDragEnded)="onDragEnded($event,i)"
-                 cdkDrag>
-                 <img src={{card.imgUrl}} class="imagenCard">
-            </div>           
-    </mat-grid-list>   
+    <div class="board">
+        <input type="button" value=">" (click)="siguiente()" class="button" *ngIf="cards.length>5"> 
+        <div class="playBoard"></div>  
+    </div> 
+    <div class="hand">
+        <div class="example-box" 
+             *ngFor="let card of cards.slice(inicio,final); index as i" 
+             (cdkDragEnded)="onDragEnded($event,i)"
+             cdkDrag>
+            <img src={{card.url}} class="imagenCard">
+        </div> 
+    </div>
 </div>
+
+
+
+
+
